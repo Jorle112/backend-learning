@@ -29,8 +29,10 @@ public class Student {
     }
 
     // main 入口——程序从这里开始执行
-    public static void main(String[] args) {
-        // 创建对象 + 调用方法，必须写在这里
-        new Student("张三", 20, 88.5).study();
+
+    public static void main(String[] args){
+        Student s = new Student("李四",19,90.5);
+        s.study();
     }
 }
+//dev分支加的注释
