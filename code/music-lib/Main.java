@@ -12,16 +12,24 @@ public class Main {
             song.b();
         }
 
-        System.out.println("请输入要查找的歌名：");
+        System.out.println("请输入要删除的歌名：");
         Scanner sc = new Scanner(System.in,"GBK");
         String target = sc.nextLine();
         
-
-        for(Song song : songs){
-            if(target.equals(song.getTitle())){
-                song.b();
+        int remove = -1;
+        for(int i = 0;i < songs.size();i++){
+            if(songs.get(i).getTitle().equals(target)){
+                remove = i;
+                break;
             }
         }
-        sc.close();
+        
+        if(remove == -1){
+            System.out.println("未找到歌曲");
+        }
+        else{
+            songs.remove(remove);
+            System.out.println("已删除");
+        }
     }   
 }
