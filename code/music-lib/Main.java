@@ -12,7 +12,17 @@ public class Main {
             song.b();
         }
 
-        System.out.println("请输入要删除的歌名：");
+        int favCount = 0;
+
+        s1.setFavorite(true);
+        for(Song song : songs){
+            if(song.isFavorite()){
+                song.b();
+                favCount++;
+            }
+        }
+        System.out.println("收藏歌曲数"+favCount);
+        /* System.out.println("请输入要删除的歌名：");
         Scanner sc = new Scanner(System.in,"GBK");
         String target = sc.nextLine();
         
@@ -30,6 +40,7 @@ public class Main {
         else{
             songs.remove(remove);
             System.out.println("已删除");
-        }
+        }*/
+        
     }   
 }
