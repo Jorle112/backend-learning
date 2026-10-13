@@ -18,7 +18,8 @@ public class Main {
             System.out.println( "1. 查看全部歌曲" );
             System.out.println( "2. 按歌名查找" );
             System.out.println( "3. 删除歌曲" );
-            System.out.println( "4. 收藏筛选" );
+            System.out.println( "4. 已收藏歌曲" );
+            System.out.println( "5. 收藏切换" );
             System.out.println( "0. 退出" );
             System.out.print( "请选择：" );
 
@@ -63,7 +64,6 @@ public class Main {
             }else if(choice.equals("4")){
                 int favCount = 0;
 
-                s1.setFavorite(true);
                 for(Song song : songs){
                     if(song.isFavorite()){
                         song.b();
@@ -71,6 +71,20 @@ public class Main {
                     }
                 }
                 System.out.println("收藏歌曲数"+favCount);
+            }else if(choice.equals("5")){
+                System.out.println("请输入要切换收藏的歌名：");
+                String target = sc.nextLine();
+                boolean found = false;
+                for(Song song : songs){
+                    if(song.getTitle().equals(target)){
+                        found = true;
+                        song.setFavorite(!song.isFavorite());
+                        System.out.println("已切换收藏状态");
+                    }
+                    if(!found){
+                        System.out.println("未找到歌曲");
+                    }
+                }
             }else if(choice.equals("0")){
                 break;
             }else{
