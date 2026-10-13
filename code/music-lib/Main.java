@@ -81,9 +81,9 @@ public class Main {
                         song.setFavorite(!song.isFavorite());
                         System.out.println("已切换收藏状态");
                     }
-                    if(!found){
+                }
+                if(!found){
                         System.out.println("未找到歌曲");
-                    }
                 }
             }else if(choice.equals("0")){
                 break;
